@@ -1,4 +1,4 @@
-package com.avanish.firstJobApplication.controllers;
+package com.avanish.firstJobApplication.job;
 
 import java.util.List;
 
