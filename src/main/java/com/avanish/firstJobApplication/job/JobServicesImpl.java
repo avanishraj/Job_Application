@@ -1,8 +1,5 @@
 package com.avanish.firstJobApplication.job;
 
-import com.avanish.firstJobApplication.job.JobServices;
-import com.avanish.firstJobApplication.job.Jobs;
-import com.avanish.firstJobApplication.job.JobRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

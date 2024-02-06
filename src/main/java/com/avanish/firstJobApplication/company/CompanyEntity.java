@@ -1,5 +1,4 @@
 package com.avanish.firstJobApplication.company;
-
 import com.avanish.firstJobApplication.job.Jobs;
 import jakarta.persistence.*;
 import java.util.List;
@@ -19,10 +18,11 @@ public class CompanyEntity {
     }
 
     public CompanyEntity() {
-
     }
+
     @OneToMany
     private List<Jobs> jobsList;
+
     public Long getId() {
         return id;
     }

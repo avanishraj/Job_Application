@@ -1,8 +1,12 @@
 package com.avanish.firstJobApplication.company;
 
-import org.springframework.stereotype.Service;
 
-@Service
+import java.util.List;
+
 public interface CompanyServices {
     void addCompany(CompanyEntity company);
+
+    void deleteCompanyById(Long id);
+
+    List<CompanyEntity> getAllCompanies();
 }
