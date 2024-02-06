@@ -9,4 +9,6 @@ public interface CompanyServices {
     void deleteCompanyById(Long id);
 
     List<CompanyEntity> getAllCompanies();
+
+    boolean updateCompanyById(Long id, CompanyEntity updateCompany);
 }

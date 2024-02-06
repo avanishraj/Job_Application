@@ -1,8 +1,7 @@
 package com.avanish.firstJobApplication.company;
-
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -30,5 +29,14 @@ public class CompanyController {
     @GetMapping()
     public ResponseEntity<List<CompanyEntity>> getAllCompanies(){
         return ResponseEntity.ok(companyServices.getAllCompanies());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateCompanyById(@PathVariable Long id, @RequestBody CompanyEntity updateCompany){
+        boolean updated = companyServices.updateCompanyById(id, updateCompany);
+        if (updated){
+            return new ResponseEntity<>("Successfully Updated", HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
