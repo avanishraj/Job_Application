@@ -1,5 +1,6 @@
 package com.avanish.firstJobApplication.company;
 import com.avanish.firstJobApplication.job.Jobs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -20,7 +21,15 @@ public class CompanyEntity {
     public CompanyEntity() {
     }
 
-    @OneToMany
+    public List<Jobs> getJobsList() {
+        return jobsList;
+    }
+
+    public void setJobsList(List<Jobs> jobsList) {
+        this.jobsList = jobsList;
+    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
     private List<Jobs> jobsList;
 
     public Long getId() {

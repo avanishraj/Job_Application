@@ -35,6 +35,7 @@ public class CompanyServicesImpl implements CompanyServices{
             CompanyEntity companyEntity = company.get();
             companyEntity.setDescription(updateCompany.getDescription());
             companyEntity.setName(updateCompany.getName());
+            companyEntity.setJobsList(updateCompany.getJobsList());
             companyRepository.save(companyEntity);
             return true;
         }
