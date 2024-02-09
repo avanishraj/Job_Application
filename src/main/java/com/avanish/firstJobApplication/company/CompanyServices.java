@@ -11,4 +11,6 @@ public interface CompanyServices {
     List<CompanyEntity> getAllCompanies();
 
     boolean updateCompanyById(Long id, CompanyEntity updateCompany);
+
+    CompanyEntity getCompanyById(Long id);
 }
