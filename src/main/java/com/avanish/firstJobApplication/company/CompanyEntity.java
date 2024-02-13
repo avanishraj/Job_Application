@@ -1,7 +1,9 @@
 package com.avanish.firstJobApplication.company;
+
 import com.avanish.firstJobApplication.job.Jobs;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
