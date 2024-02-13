@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class ReviewServiceImpl implements  ReviewService{
     private ReviewRepository reviewRepository;
     @Override
-    public void addReview(ReviewEntity review) {
+    public void addReview(ReviewEntity review, Long companiesId) {
         reviewRepository.save(review);
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping ("/review")
+@RequestMapping ("/companies/{companiesId}")
 public class ReviewController {
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
@@ -13,8 +13,8 @@ public class ReviewController {
 
     final private ReviewService reviewService;
     @PostMapping
-    public ResponseEntity<String> addReview(@RequestBody ReviewEntity review){
-        reviewService.addReview(review);
+    public ResponseEntity<String> addReview(@RequestBody ReviewEntity review, @PathVariable Long companiesId){
+        reviewService.addReview(review, companiesId);
         return new ResponseEntity<>("Review added Successfully", HttpStatus.OK);
     }
 

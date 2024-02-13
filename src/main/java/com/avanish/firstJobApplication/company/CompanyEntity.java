@@ -1,5 +1,6 @@
 package com.avanish.firstJobApplication.company;
 
+import com.avanish.firstJobApplication.Review.ReviewEntity;
 import com.avanish.firstJobApplication.job.Jobs;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -33,6 +34,17 @@ public class CompanyEntity {
     @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Jobs> jobsList;
+
+    public List<ReviewEntity> getReview() {
+        return review;
+    }
+
+    public void setReview(List<ReviewEntity> review) {
+        this.review = review;
+    }
+
+    @OneToMany(mappedBy = "company")
+    private List<ReviewEntity> review;
 
     public Long getId() {
         return id;

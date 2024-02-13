@@ -1,5 +1,5 @@
 package com.avanish.firstJobApplication.Review;
 
 public interface ReviewService {
-    void addReview(ReviewEntity review);
+    void addReview(ReviewEntity review, Long companiesId);
 }

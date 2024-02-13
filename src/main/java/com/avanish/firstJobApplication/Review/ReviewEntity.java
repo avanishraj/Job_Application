@@ -1,9 +1,8 @@
 package com.avanish.firstJobApplication.Review;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.avanish.firstJobApplication.company.CompanyEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
 public class ReviewEntity {
@@ -22,6 +21,9 @@ public class ReviewEntity {
     public ReviewEntity() {
 
     }
+    @JsonIgnore
+    @ManyToOne
+    private CompanyEntity company;
 
     public Long getId() {
         return id;
