@@ -9,18 +9,38 @@ public class ReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    private String title;
     private String description;
     private int rating;
 
-    public ReviewEntity(Long id, String description, int rating) {
+    public ReviewEntity(Long id,String title, String description, int rating) {
         this.id = id;
         this.description = description;
         this.rating = rating;
+        this.title = title;
     }
 
     public ReviewEntity() {
 
     }
+
+    public CompanyEntity getCompany() {
+        return company;
+    }
+
+    public void setCompany(CompanyEntity company) {
+        this.company = company;
+    }
+
     @JsonIgnore
     @ManyToOne
     private CompanyEntity company;
