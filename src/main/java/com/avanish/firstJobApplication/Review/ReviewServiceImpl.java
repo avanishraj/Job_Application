@@ -2,11 +2,10 @@ package com.avanish.firstJobApplication.Review;
 import com.avanish.firstJobApplication.company.CompanyEntity;
 import com.avanish.firstJobApplication.company.CompanyServices;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
-public class ReviewServiceImpl implements ReviewService{
+    public class ReviewServiceImpl implements ReviewService{
     private final ReviewRepository reviewRepository;
     private final CompanyServices company;
     public ReviewServiceImpl(ReviewRepository reviewRepository, CompanyServices company) {
@@ -23,6 +22,7 @@ public class ReviewServiceImpl implements ReviewService{
         }
         return false;
     }
+
 
     @Override
     public List<ReviewEntity> getAllReviews(Long companiesId) {
